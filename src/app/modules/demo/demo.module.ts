@@ -3,18 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { DemoRoutingModule } from './demo-routing.module';
 import { HomeComponent } from './components/home/home.component';
-import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DrawLineComponent } from './components/draw-line/draw-line.component';
+import { DragDropComponent } from './components/drag-drop/drag-drop.component';
+import { TableComponent } from './components/table/table.component';
+import { ResizeComponent } from './components/resize/resize.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DrawLineComponent
+    DrawLineComponent,
+    DragDropComponent,
+    TableComponent,
+    ResizeComponent
   ],
   imports: [
     CommonModule,
-    DemoRoutingModule,
-    DragAndDropModule
+    DemoRoutingModule
   ]
 })
 export class DemoModule { }
