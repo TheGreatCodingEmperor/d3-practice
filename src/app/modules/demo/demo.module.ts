@@ -7,6 +7,8 @@ import { DrawLineComponent } from './components/draw-line/draw-line.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 import { TableComponent } from './components/table/table.component';
 import { ResizeComponent } from './components/resize/resize.component';
+import { FlowComponent } from './components/flow/flow.component';
+import { SharedPrimengModule } from 'src/app/shared/modules/shared-primeng/shared-primeng.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ResizeComponent } from './components/resize/resize.component';
     DrawLineComponent,
     DragDropComponent,
     TableComponent,
-    ResizeComponent
+    ResizeComponent,
+    FlowComponent
   ],
   imports: [
     CommonModule,
-    DemoRoutingModule
+    DemoRoutingModule,
+    SharedPrimengModule
   ]
 })
 export class DemoModule { }

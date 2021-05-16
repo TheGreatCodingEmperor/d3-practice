@@ -1,6 +1,6 @@
 <ng-container *ngIf="!isReport">
   <span [ngSwitch]="to.type">
-    <span style="position: relative">
+    <span style="position: relative"  *ngSwitchCase="'password'x">
       <input
         *ngSwitchCase="'password'"
         [name]="field.name || id"
@@ -17,8 +17,6 @@
       *ngSwitchDefault
       [name]="field.name || id"
       [formControl]="formControl"
-      [label]="option.label"
-      [value]="option.value"
       [type]="to.type"
     />
   </span>

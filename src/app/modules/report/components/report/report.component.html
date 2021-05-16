@@ -18,5 +18,8 @@ report
 <button (click)="showSchema()">shcema</button>
 
 <p-sidebar [(visible)]="settingPanelDisplay" [modal]="false" position="right">
-  Content
+  <form [formGroup]="settingPanelForm" (ngSubmit)="submit(settingPanelModel)">
+    <formly-form [form]="settingPanelForm" [fields]="settingPanelFields" [model]="settingPanelModel"></formly-form>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
 </p-sidebar>

@@ -13,6 +13,51 @@ import { ReportDesignService } from '../../services/report-design.service';
 export class ReportComponent implements OnInit, OnDestroy {
   settingPanelDisplay = false;
 
+  settingPanelForm = new FormGroup({});
+  settingPanelModel = {};
+  settingPanelFields = [
+    {
+      key: 'key',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Key',
+        placeholder: 'Key',
+        required: true,
+      },
+    },
+    {
+      key: 'type',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'type',
+        placeholder: 'type',
+        required: true,
+      },
+    },
+    {
+      key: 'name',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'name',
+        placeholder: 'name',
+        required: true,
+      },
+    },
+    {
+      key: 'key',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Key',
+        placeholder: 'Key',
+        required: true,
+      },
+    },
+  ];
+
   form = new FormGroup({});
   model = { email: 'email@gmail.com' };
 
