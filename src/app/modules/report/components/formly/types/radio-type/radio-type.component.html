@@ -1,0 +1,12 @@
+<div style="display: flex">
+  <label *ngFor="let option of to.options">
+    <input
+      type="radio"
+      [name]="field.name || id"
+      [value]="option.value"
+      [formControl]="formControl"
+      [label]="option.label"
+    />
+    {{ option.label }}
+  </label>
+</div>

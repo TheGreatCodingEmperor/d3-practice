@@ -1,0 +1,7 @@
+.password-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5rem;
+  right: .5rem;
+  cursor: pointer;
+}

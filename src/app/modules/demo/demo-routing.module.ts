@@ -7,7 +7,7 @@ import { ResizeComponent } from './components/resize/resize.component';
 import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'line', component: DrawLineComponent },
   { path: 'drag-drop', component: DragDropComponent },
   { path: 'resize', component: ResizeComponent },

@@ -1,0 +1,28 @@
+<ng-container *ngIf="!isReport">
+  <span [ngSwitch]="to.type">
+    <span style="position: relative">
+      <input
+        *ngSwitchCase="'password'"
+        [name]="field.name || id"
+        [formControl]="formControl"
+        [type]="showPassword ? 'text' : 'password'"
+      />
+      <i
+        [ngClass]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'"
+        class="password-icon"
+        (click)="showPassword = !showPassword"
+      ></i>
+    </span>
+    <input
+      *ngSwitchDefault
+      [name]="field.name || id"
+      [formControl]="formControl"
+      [label]="option.label"
+      [value]="option.value"
+      [type]="to.type"
+    />
+  </span>
+</ng-container>
+<ng-container *ngIf="isReport">
+  {{formControl.value}}
+</ng-container>
