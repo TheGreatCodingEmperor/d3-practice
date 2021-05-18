@@ -1,12 +1,20 @@
-<div id="container" style="position:relative;margin: 20px;overflow: hidden;width:400px;height:400px;">
-    <div id="table1"></div>
-    <div id="table2"></div>
-    <svg>
+<div>
+  <div class="templateTable" *ngFor="let template of templateTables" draggable="true" [id]="template.id">
+    {{template.name}}
+  </div>
+</div>
+<div id="container" style="position:relative;margin: 20px;overflow: hidden;" [style.width.px]="width" [style.height.px]="height">
+  <div id="tooltip" class="tooltip"></div>
+  <svg>
     </svg>
 </div>
-<p-dialog header="Title" [(visible)]="display">
-    Content
+<p-dialog header="Title" [(visible)]="joinTypeDisplay">
+  <div *ngIf="currentLine">
+    <p-dropdown [options]="joinTypes" [(ngModel)]="currentLine.joinType" [appendTo]="'body'"></p-dropdown>
+  </div>
 </p-dialog>
 <textarea #importFlow type="text" ></textarea>
 <button (click)="importSchema(importFlow)">Import</button>
 <button (click)="exportSchema()">Export</button>
+<button (click)="onDestroy()">onDestroy</button>
+<button (click)="showSelect()">showSelect</button>

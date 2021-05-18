@@ -1,9 +1,44 @@
-:host ::ng-deep  .ui-table{
+:host ::ng-deep .ui-table {
+  padding: .2rem;
   cursor: move;
+  max-width: 150px;
 }
-:host ::ng-deep  .line-point{
+:host ::ng-deep .column-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+:host ::ng-deep .table-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+:host ::ng-deep .line-point {
   cursor: pointer;
 }
-:host ::ng-deep  .join-icon{
+:host ::ng-deep .join-icon {
   cursor: pointer;
+}
+:host ::ng-deep .basic-table {
+  border: 1px solid black;
+}
+:host ::ng-deep .selected-table {
+  border: 5px solid grey;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  /* width: 60px; */
+  /* height: 28px; */
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
 }
