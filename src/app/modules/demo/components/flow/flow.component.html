@@ -1,4 +1,4 @@
-<div id="container" style="position:relative;margin: 20px;">
+<div id="container" style="position:relative;margin: 20px;overflow: hidden;width:400px;height:400px;">
     <div id="table1"></div>
     <div id="table2"></div>
     <svg>
@@ -7,3 +7,6 @@
 <p-dialog header="Title" [(visible)]="display">
     Content
 </p-dialog>
+<textarea #importFlow type="text" ></textarea>
+<button (click)="importSchema(importFlow)">Import</button>
+<button (click)="exportSchema()">Export</button>

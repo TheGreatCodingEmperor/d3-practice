@@ -1,0 +1,9 @@
+:host ::ng-deep  .ui-table{
+  cursor: move;
+}
+:host ::ng-deep  .line-point{
+  cursor: pointer;
+}
+:host ::ng-deep  .join-icon{
+  cursor: pointer;
+}

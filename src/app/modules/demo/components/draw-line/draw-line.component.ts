@@ -16,14 +16,23 @@ export class DrawLineComponent implements OnInit {
       .attr('height', 400)
       .style('background-color', 'black');
 
-    svg
-      .append('line')
+    const g = svg.append('g');
+
+    g.append('line')
       .style('stroke', 'lightgreen')
       .style('stroke-width', 10)
       .attr('x1', 0)
       .attr('y1', 0)
       .attr('x2', 200)
       .attr('y2', 200);
+
+    const zoom = d3
+      .zoom()
+      .on('zoom', (event) => {
+        g.selectAll('line').attr('transform', event.transform);
+      })
+      .scaleExtent([1, 40]);
+    svg.call(zoom);
 
     var data = [
       { x: 10, y: 10 },
@@ -52,19 +61,19 @@ export class DrawLineComponent implements OnInit {
     var linkGen = d3.linkHorizontal();
     var singleLinkData = { source: [25, 25], target: [75, 75] };
     var multiLinkData = [
-      {source: [50,50], target: [175,25]},
-      {source: [50,50], target: [175,50]},
-      {source: [50,50], target: [175,75]},
-  ];
+      { source: [50, 50], target: [175, 25] },
+      { source: [50, 50], target: [175, 50] },
+      { source: [50, 50], target: [175, 75] },
+    ];
 
     // 在 svg 中插入一個 path
     svg
-    .selectAll("path")
-    .data(multiLinkData)
-    .join("path")
-    .attr("d", linkGen)
-    .attr("fill", "none")
-    .attr("stroke", "white");
+      .selectAll('path')
+      .data(multiLinkData)
+      .join('path')
+      .attr('d', linkGen)
+      .attr('fill', 'none')
+      .attr('stroke', 'white');
 
     // 在 svg 中插入一個 path
     svg
